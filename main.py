@@ -7,19 +7,22 @@ def main():
 
 def linkedList():
     node1 = Node(1)
-    node2 = Node("Node2")
-    node3 = Node([1,2,3])
-    node4 = Node(3)
-    node5 = Node(2)
-
-    node1.next=node2
-    node2.next=node3
-    node3.next=node4
-    node4.next=node5
-
+   
     lList = LinkedList(node1)
     lList.print()
     lList.remove_first()
+    lList.print()
+    lList.insert_last(Node("100"))
+    lList.print()
+    lList.insert_first(Node("10"))
+    lList.print()
+    lList.insert_first(Node("20"))
+    lList.print()
+    lList.insert_first(Node("30"))
+    lList.print()
+    lList.insert_first(Node("40"))
+    lList.print()
+    lList.insert_first(Node("50"))
     lList.print()
     lList.insert_first(Node("First"))
     lList.print()

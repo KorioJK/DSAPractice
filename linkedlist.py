@@ -1,23 +1,24 @@
 class LinkedList:
     def __init__(self,head):
         self.head = head
+        self.last = None
 
     def insert_first(self,node):
-        node.next = self.head
-        self.head = node
+        if not self.head:
+            self.head = node
+            self.last = node
+        else:
+            node.next = self.head
+            self.head = node
         
     
     def insert_last(self,node):
-        if not self.head:  
+        if not self.head:
             self.head = node
-            return
-
-        current_node = self.head
-        while current_node.next:
-            current_node = current_node.next
-
-       
-        current_node.next = node
+            self.last = node
+        else:
+            self.last.next = node
+            self.last = node
     
     def remove_first(self):
         if self.head:
@@ -82,7 +83,11 @@ class LinkedList:
         while current_node:
             listItems.append(current_node.data)
             current_node = current_node.next
-        print(listItems)
+        if self.last:
+            print(f"items: ${listItems}, head:{self.head.data}, last:{self.last.data} ")
+        else:
+            print(f"items: ${listItems}, head:{self.head.data}")
+
         
 
 
